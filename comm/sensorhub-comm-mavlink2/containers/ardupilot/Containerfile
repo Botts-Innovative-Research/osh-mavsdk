@@ -28,7 +28,6 @@ RUN apt-get update && \
         cmake \
         zip \
         unzip \
-        python3-pip \
         lsb-release \
         fontconfig \
         python3.12-venv \
@@ -37,22 +36,22 @@ RUN apt-get update && \
         libcurl4-openssl-dev \
         pkg-config \
         python3-dev \
-        python3-pip && \
-    apt-get clean && \
-    git clone https://github.com/ArduPilot/ardupilot.git && \
-    cd ardupilot && \
-    Tools/environment_install/install-prereqs-ubuntu.sh -y && \
-    echo "Taiwan=24.178772,120.649633,0,0" >> Tools/autotest/locations.txt && \
-    echo "Taiwan2=24.178772,120.648633,0,0" >> Tools/autotest/locations.txt && \
-    echo "Taiwan3=24.178772,120.647633,0,0" >> Tools/autotest/locations.txt && \
-    echo "Taiwan added as location to Ardupilot" && \
-    mkdir ~/.mavproxy && \
-    touch ~/.mavproxy/mavinit.scr && \
-    echo "mavinit.scr created" && \
-    echo "output add 127.0.0.1:14540" >> ~/.mavproxy/mavinit.scr && \
-    echo "output add 127.0.0.1:14560" >> ~/.mavproxy/mavinit.scr && \
-    echo "output add 127.0.0.1:14550" >> ~/.mavproxy/mavinit.scr && \
-    echo "outputs added to mavinit.scr"
+        python3-pip
+
+RUN apt-get clean
+RUN git clone https://github.com/ArduPilot/ardupilot.git
+RUN /app/ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh -y
+RUN echo "Taiwan=24.178772,120.649633,0,0" >> /app/ardupilot/Tools/autotest/locations.txt
+RUN echo "Taiwan2=24.178772,120.648633,0,0" >> /app/ardupilot/Tools/autotest/locations.txt
+RUN echo "Taiwan3=24.178772,120.647633,0,0" >> /app/ardupilot/Tools/autotest/locations.txt
+RUN echo "Taiwan added as location to Ardupilot"
+RUN mkdir -p "/root/.mavproxy"
+RUN touch "/root/.mavproxy/mavinit.scr"
+RUN echo "mavinit.scr created"
+RUN echo "output add 127.0.0.1:14540" >> "/root/.mavproxy/mavinit.scr"
+RUN echo "output add 127.0.0.1:14560" >> "/root/.mavproxy/mavinit.scr"
+RUN echo "output add 127.0.0.1:14550" >> "/root/.mavproxy/mavinit.scr"
+RUN echo "outputs added to mavinit.scr"
 
 
 CMD /bin/bash
