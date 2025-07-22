@@ -3,12 +3,12 @@
 set -e
 
 #update/upgrade the system
-sudo apt update && sudo apt upgrade -y
+apt update && apt upgrade -y
 wait
 echo "Sys update/upgrade done"
 
 # install build tools
-sudo apt-get install build-essential cmake git zip unzip python3-pip -y
+apt-get install build-essential cmake git zip unzip python3-pip -y
 wait
 echo "pre-req tools installed"
 
@@ -33,12 +33,12 @@ wait
 echo "MAVSDK built"
 
 # Install MAVSDK, including Server
-sudo cmake --build build --target install
+cmake --build build --target install
 wait
 echo "MAVSDK installed"
 
 # Update LDCONFIG
-sudo ldconfig
+ldconfig
 wait
 echo "ldconfig updated"
 
