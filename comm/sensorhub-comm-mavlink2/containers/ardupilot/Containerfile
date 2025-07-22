@@ -22,5 +22,5 @@ RUN apt-get update && \
     git clone --recursive https://github.com/Botts-Innovative-Research/osh-mavsdk.git && \
     bash /app/osh-mavsdk/comm/sensorhub-comm-mavlink2/containers/ardupilot/ardupilot_install.sh
 
-/bin/bash: line 1: :q: command not found
+CMD /bin/bash
 

@@ -1,3 +1,3 @@
 #!/bin/bash
-# run the mavsdk container
-distrobox enter ardupilot -- mavsdk_server "$@"
+# run the ardupilot container
+distrobox enter ardupilot
