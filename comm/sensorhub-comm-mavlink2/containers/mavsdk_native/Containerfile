@@ -1,0 +1,13 @@
+FROM ubuntu:24.04
+
+# Optional: set a working directory
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y git curl && \
+    apt-get clean && \
+    git clone --recursive https://github.com/Botts-Innovative-Research/osh-mavsdk.git && \
+    bash /app/osh-mavsdk/comm/sensorhub-comm-mavlink2/containers/mavsdk_native/mavsdk_native_install.sh
+
+CMD exec /bin/bash 
+
