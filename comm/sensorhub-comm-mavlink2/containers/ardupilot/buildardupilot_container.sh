@@ -13,6 +13,6 @@
 # 
 # ******************************* END LICENSE BLOCK ***************************
 
-podman build -f Containerfile -t mavsdk:v0.6 . &&
-distrobox-create --name mavsdk --image localhost/mavsdk:v0.6
+podman build -f Containerfile -t ardupilot:v0.1 . &&
+distrobox-create --name ardupilot --image localhost/ardupilot:v0.1
 
