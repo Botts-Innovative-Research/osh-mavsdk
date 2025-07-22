@@ -21,7 +21,7 @@ wait
 echo "Sys update/upgrade done"
 
 # install build tools
-apt-get install build-essential cmake git zip unzip python3-pip lsb-release fontconfig -y
+apt-get install build-essential cmake git zip unzip python3-pip lsb-release fontconfig python3.12-venv -y
 wait
 echo "pre-req tools installed"
 
