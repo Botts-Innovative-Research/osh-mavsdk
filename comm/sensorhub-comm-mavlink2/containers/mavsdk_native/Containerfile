@@ -9,5 +9,5 @@ RUN apt-get update && \
     git clone --recursive https://github.com/Botts-Innovative-Research/osh-mavsdk.git && \
     bash /app/osh-mavsdk/comm/sensorhub-comm-mavlink2/containers/mavsdk_native/mavsdk_native_install.sh
 
-CMD exec /bin/bash 
+CMD exec mavsdk_server 
 
