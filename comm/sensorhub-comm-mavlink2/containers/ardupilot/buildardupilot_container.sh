@@ -18,3 +18,16 @@ podman build -f ardupilot/Dockerfile -t ardupilot:v0.1 ./ardupilot &&
 distrobox-create --name ardupilot --image localhost/ardupilot:v0.1
 distrobox enter ardupilot -- bash -c "cd / && ./ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh -y"
 
+# Add additional mav out
+mkdir ~/.mavproxy
+wait
+echo ".mavproxy directory created"
+
+touch ~/.mavproxy/mavinit.scr
+wait
+echo "mavinit.scr created"
+
+echo "output add 127.0.0.1:14540" >> ~/.mavproxy/mavinit.scr
+echo "output add 127.0.0.1:14560" >> ~/.mavproxy/mavinit.scr
+echo "output add 127.0.0.1:14550" >> ~/.mavproxy/mavinit.scr
+echo "outputs added to mavinit.scr"
