@@ -1,3 +1,3 @@
 #!/bin/bash
 # run the mavsdk container
-distrobox enter mavsdk -- mavsdk_server "$@"
+distrobox enter mavsdk -- bash -c 'source /home/user/MAVSDK/.bashrc && mavsdk_server "$@"'
