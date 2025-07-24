@@ -2,6 +2,7 @@
 
 ## Building
 ./build.sh
+
 This script builds both containers and the binaries inside the containers
 
 The containers are each an Ubuntu image with the proper stuff inside. The are podman containers that can run with 
@@ -13,6 +14,7 @@ The containers are best run inside of a Linux environment.
 An example run.sh is provided for each
 
 ./ardupilot/run.sh 
+
 ./mavsdk_native/run.sh 
 
 ## Tested on a VM of Fedora Kinoite ARM64 (Mac)
