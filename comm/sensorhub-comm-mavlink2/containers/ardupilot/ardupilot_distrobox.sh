@@ -13,7 +13,7 @@
 # 
 # ******************************* END LICENSE BLOCK ***************************
 
-git clone --recursive git@github.com:micstinso/ardupilot.git
+git clone --recursive https://github.com/micstinso/ardupilot.git
 podman build -f ardupilot/Dockerfile -t ardupilot:v0.1 ./ardupilot &&
 distrobox-create --name ardupilot --image localhost/ardupilot:v0.1
 distrobox enter ardupilot -- bash -c "export HOME=/home/ardupilot && cd / && ./ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh -y"
